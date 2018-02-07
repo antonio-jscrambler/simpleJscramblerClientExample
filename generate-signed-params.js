@@ -5,6 +5,8 @@ var keys = require('lodash.keys');
 
 const debug = !!process.env.DEBUG;
 
+
+// sign params, add signature. Return the created payload
 function signedParams(method, path, host, keys, params = {}) {
   params = defaults(clone(params), {
     access_key: keys.accessKey,
@@ -14,6 +16,7 @@ function signedParams(method, path, host, keys, params = {}) {
   return params;
 }
 
+// Create signature using method, path, host access key and query
 function generateHmacSignature(method, path, host, keys, params) {
   const paramsCopy = clone(params);
   const signatureData = `${method.toUpperCase()};${host.toLowerCase()};${path};${buildSortedQuery(
@@ -25,6 +28,7 @@ function generateHmacSignature(method, path, host, keys, params) {
   return hmac.digest('base64');
 }
 
+// Add query to the signature
 function buildSortedQuery(params) {
   // Sorted keys
   const _keys = keys(params).sort();
