@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "description": "a",
+  "version": "1.0",
+  "homepage": "a",
+  "engines": {
+    "node": ">= 6.10.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "lodash.clone": "^4.5.0",
+    "lodash.defaults": "^4.2.0",
+    "lodash.keys": "^4.2.0",
+    "request": "^2.83.0"
+  }
+}
