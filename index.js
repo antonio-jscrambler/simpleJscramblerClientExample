@@ -6,7 +6,7 @@ var gsp = require("./generate-signed-params");
 // Params for generate-signed-params
 var method = "POST";
 var path = "/application";
-var host = "api4.jscramler.com";
+var host = "api4.jscrambler.com";
 var keys = {
 	"accessKey":"CHANGE_ME",
 	"secretKey":"CHANGE_ME"
@@ -17,7 +17,7 @@ var graphiQuery = {
     data:{
       name:"Hello world",
       //languageSpecifications: {es6:true}, // optional
-      parameters: [{ "name": "stringSplitting", "status": 1 }] // optional
+      //parameters: [{ "name": "stringSplitting", "status": 1 }] // optional
     }
   },
   query:`mutation createApplication ($data: ApplicationCreate!) {
